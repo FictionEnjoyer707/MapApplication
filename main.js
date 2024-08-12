@@ -64,7 +64,6 @@ function addMarker(lat, lon) {
 
   const iconFeature = new Feature({
     geometry: new Point(fromLonLat([lon, lat])),
-    id: pointID
   });
 
   const iconStyle = new Style({
@@ -188,8 +187,7 @@ if (choice.toLowerCase() == "map"){
 
 
  
-Pquery.addEventListener('click', async function(){
- 
+Pquery.addEventListener('click', function(){
   jsPanel.create( {
     closeOnEscape: true,
     theme: 'dark',
@@ -201,34 +199,18 @@ Pquery.addEventListener('click', async function(){
     animateIn: 'jsPanelFadeIn',
     onwindowresize: true,
     borderRadius:'.5rem',
-    content: `
-    <div id="data-table-container" style="padding: 15px;">
-      <table id="data-table" style="width: 100%; border-collapse: collapse;">
-        <thead>
-          <tr>
-            <th></th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Wkt</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="data-table-body">
-          <!-- Rows -->
-        </tbody>
-      </table>
-    </div>
-  `,
-  callback: function () {
-    fetchAndDisplayData();
-  }
+    content: `<h4>Point Name</h4>
+    <p>To be point wkt data</p>
+    <button>Show</button>
+    <button>Update on Map</button>
+    <button>Update by Coordinates</button>
+    <button>Delete</button>
+    `,
 
     
-  });
+  } );
   
 });
-
-
 
 
 
