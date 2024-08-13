@@ -47,14 +47,10 @@ async function sendPointToDatabase(name, lat, lon) {
       name: name,
       wkt: wkt
   };
-
-  if (id) {
-    // Update existing point
-    await axios.put(`https://localhost:7245/api/Point/${id}`, pointData);
-  } else {
+  
     // Create new point
     await axios.post('https://localhost:7245/api/Point', pointData);
-  }
+  
 
 }
 
